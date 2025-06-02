@@ -6,7 +6,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'pwd', usernameVariable: 'usrname')]) {
                     sh '''
-	            echo $pwd | docker login -u $usrname -p $pwd
+	            echo $pwd | docker login -u $usrname --password-stdin
                     docker build -t devanarayanantm/pytestimg .
                     if docker ps -a | grep "devcont" ;then
 			docker stop devcont
