@@ -18,19 +18,13 @@ pipeline {
                 }
             }
         }
-
-	stage('testt') {
-		steps {
+        
+	stage('k8s') {
+		step {
 			sh """
-				if (kubectl get deploy | grep devnndeploy); then
-					kubectl delete deploy devnndeploy
-				fi
-				kubectl create deploy devnndeploy --image=devanarayanantm/pytestimg --replicas=2
-				kubectl expose deploy devnndeploy --port 99 --target-port=3000 --type NodePort
+				if [
 			"""
 		}
-	}        
-         
+	}    
     }    
 }
-
