@@ -5,6 +5,8 @@ def call() {
 		python3 -m venv devvenv
 		. devvenv/bin/activate	
 		pip install --upgrade pip
+		pip install -r requirements.txt
+		python3 -m pytest
 	'''
 }
 
