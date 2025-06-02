@@ -8,7 +8,7 @@ pipeline {
                     sh '''
                     docker build -t devanarayanantm/pytestimg .
                     docker run -d -p 888:5000 devanarayanantm/pytestimg 
-                    docker login -u $usrname -p $pwd
+                    docker login -u ${usrname} -p ${pwd}
 		    docker push devanarayanantm/pytestimg
                     '''
                 }
