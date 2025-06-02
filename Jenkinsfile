@@ -6,7 +6,7 @@ pipeline {
         stage('test') {
             steps {
                 pyTest()
-                echo "Pytest done"
+                sh ' echo "Pytest done" '
             }
         }
         
