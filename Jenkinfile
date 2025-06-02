@@ -1,0 +1,16 @@
+@Library('pytest') _
+pipeline {
+    agent any
+
+    stages {
+        stage('test') {
+            steps {
+                pyTest()
+                echo "Pytest done"
+            }
+        }
+        
+    }
+    
+    
+}
